@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    
+    .nav-link {
+      @apply text-primary-800 p-5 font-semibold transition duration-200 ease-in-out
+      hover:bg-primary-800 hover:bg-opacity-10 hover:border-primary-800 hover:border-b-2
+      dark:hover:bg-white dark:hover:bg-opacity-10 dark:hover:border-white dark:hover:border-b-2 dark:text-white
+    }
+    
+    .active-nav-item {
+      @apply border-b-2 bg-opacity-20 bg-primary-800 border-primary-800
+      dark:border-white dark:text-white dark:bg-white dark:bg-opacity-20
+    }
+
+
+    .theme-mode {
+      @apply 
+    }
+}
