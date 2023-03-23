@@ -15,8 +15,4 @@
       dark:border-white dark:text-white dark:bg-white dark:bg-opacity-20
     }
 
-
-    .theme-mode {
-      @apply 
-    }
 }

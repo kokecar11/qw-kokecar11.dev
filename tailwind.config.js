@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx,md}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './routes/**/*.{md,mdx}'],
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     extend: {
@@ -64,7 +64,16 @@ module.exports = {
           800: "#800F44",
           900: "#6A093F"
         }
-      }
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            'h1, h2': {
+              color: theme('colors.primary.800'),
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],
