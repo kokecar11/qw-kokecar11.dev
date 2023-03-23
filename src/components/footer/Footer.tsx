@@ -51,7 +51,7 @@ export default component$( () => {
 
             <div
                 class="bg-neutral-300 p-1 text-center text-primary-800 dark:bg-primary-800 dark:text-white">
-                © 2023 Hecho con el ❤️ - <span class={"font-bold"}>KokeCar_11</span>
+                © 2023 Hecho con el ❤️ - <span class={"font-bold"}>Kokecar11</span>
             </div>
         </footer>
     );
