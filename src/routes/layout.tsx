@@ -2,8 +2,8 @@ import { $, component$, Slot, useContext, useVisibleTask$ } from '@builder.io/qw
 import { Link, routeLoader$, useLocation } from '@builder.io/qwik-city';
 import { GlobalStore } from '~/core/context';
 import {getColorPreference, setPreference } from '~/components/toggle-theme/Toggle-theme';
-import Footer from '~/components/starter/footer/footer';
-import Navbar2 from '~/components/navbar-2/Navbar-2';
+import Footer from '~/components/footer/Footer';
+import Navbar from '~/components/navbar/Navbar';
 import type { NavItemsMenuI } from '~/core/interfaces/menu';
 
 export const useServerTimeLoader = routeLoader$(() => {
@@ -31,13 +31,13 @@ export default component$(() => {
   });
 
   const navItems: NavItemsMenuI[] = [
-    // {name:'Blog', route:'/blog/'},
+    {name:'Blog', route:'/blog/'},
     {name:'Proyectos', route:'/projects/'},
   ]
   return (
     <div class="page">
       <main class={"bg-white text-primary-800 dark:text-white dark:bg-primary-900 min-h-screen"}>
-        <Navbar2>
+        <Navbar>
           <div q:slot='navLogo' class={""}>
             <span class={"font-bold text-lg"}>KokeCar11</span>
           </div>
@@ -68,15 +68,16 @@ export default component$(() => {
             </button>  
                  
           </div>
-        </Navbar2>
-        <div class={"mx-auto px-2 sm:px-6 lg:px-40"}>
-          <Slot />
+        </Navbar>
+        <div class={"mx-auto px-2 sm:px-6 lg:px-12 prose lg:prose-lg dark:prose-invert"}>
+          <article>
+
+            <Slot />
+          </article>
         </div>
       </main>
       <div class="section dark">
-        <div class="container">
           <Footer />
-        </div>
       </div>
     </div>
   );

@@ -3,6 +3,8 @@ import { component$ } from '@builder.io/qwik';
 
 export default component$( () => {
     return (
-        <div>Blog</div>
+        <div class={"prose"}>
+            
+        </div>
     );
 })

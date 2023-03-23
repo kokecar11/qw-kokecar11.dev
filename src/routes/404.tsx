@@ -1,18 +1,18 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import Navbar2 from '~/components/navbar-2/Navbar-2';
+import Navbar from '~/components/navbar/Navbar';
 
 
 export default component$( () => {
     return ( 
 <div class="page">
       <main class={"bg-white text-primary-800 dark:text-white dark:bg-primary-900 min-h-screen"}>
-        <Navbar2>
+        <Navbar>
           <div q:slot='navLogo' class={"pb-1"}>
             <span class={"font-bold text-lg"}>KokeCar11</span>
           </div>
           
-        </Navbar2>
+        </Navbar>
         <div class={"mx-auto px-2 sm:px-6 lg:px-40"}>
         <section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
             <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
