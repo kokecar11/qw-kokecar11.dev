@@ -1,24 +1,34 @@
 import { component$, Slot } from '@builder.io/qwik';
-import { Link } from '@builder.io/qwik-city';
+
 
 export default component$( () => {
     return (
-        <nav class="sticky top-0 z-10 bg-white dark:bg-primary-900 backdrop-filter backdrop-blur-lg bg-opacity-30 border-b border-primary-800 border-opacity-20">
-            <div class="mx-auto px-4 sm:px-40">
-                <div class="flex items-center h-16">
-                    <span class="text-2xl font-semibold">
-                        <Link class="flex items-center mt-2 lg:mt-0 mr-1" href='/'>
-                            <span class="font-bold text-xl text-primary-900 dark:text-primary-100">KokeCar11</span>
-                        </Link>
-                    </span>
-                    <div class="flex-1 text-primary-800">
-                        <Slot name="navItems" />
+        <nav class="bg-white dark:bg-primary-900 backdrop-filter backdrop-blur-lg bg-opacity-20 border-b border-primary-800 border-opacity-20">
+            <div class="mx-auto px-2 sm:px-6 lg:px-40">
+                <div class="relative flex h-16 items-center justify-between">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    {/* Open menu with btn */}
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex flex-shrink-0 items-center">
+                        <Slot name="navLogo" />
                     </div>
-                    <div class="flex-none">
-                        <Slot name="navItemsFinal" />
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <Slot name="navItemsStart" />
+                        </div>
+                    </div>
+                </div>
+                    <div class="pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                        <Slot name="navItemsEnd" />
                     </div>
                 </div>
             </div>
-        </nav>
+        <div class="sm:hidden" id="mobile-menu">
+            <div class="space-y-1 px-2 pt-2 pb-3">
+                <Slot name="navItemsMobile" />
+            </div>
+        </div>
+    </nav>
     );
 })
